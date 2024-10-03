@@ -16,7 +16,9 @@ public class MovieManager {
 
     public void addMovie(String movie) {
         String[] tmp = new String[movies.length + 1];
-        System.arraycopy(movies, 0, tmp, 0, movies.length);
+        for (int i = 0; i < movies.length; i ++) {
+            tmp [i] =  movies[i];
+        }
         tmp[tmp.length - 1] = movie;
         movies = tmp;
 
