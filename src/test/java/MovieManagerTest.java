@@ -114,14 +114,14 @@ public class MovieManagerTest {
     //получение последних фильмов: когда в менеджере фильмов больше чем лимит
     @Test
     public void test5() {
-        MovieManager manager = new MovieManager(2);
+        MovieManager manager = new MovieManager(3);
 
         manager.addMovie("Film 1");
         manager.addMovie("Film 2");
         manager.addMovie("Film 3");
         manager.addMovie("Film 4");
 
-        String[] expected = {"Film 4", "Film 3"};
+        String[] expected = {"Film 3", "Film 2", "Film 1"};
         String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
